@@ -1,0 +1,13 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - LondonPM2_5Emissions.ipynb
+
+
+website:
+  title: "My Site"
+  navbar:
+    left:
+      - href: LondonPM2_5Emissions.ipynb
+        text: Home
