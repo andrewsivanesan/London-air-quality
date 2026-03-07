@@ -3,6 +3,10 @@ project:
   output-dir: docs
   render:
     - index.ipynb
+  resources:
+    - images/
 
 website:
   title: ""
+
+bibliography: references.bib
