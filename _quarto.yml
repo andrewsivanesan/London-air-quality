@@ -3,6 +3,17 @@ project:
   output-dir: docs
   render:
     - index.ipynb
+  resources:
+    - images/
 
 website:
   title: ""
+
+format:
+  html:
+    toc: true
+    toc-title: Contents
+    toc-location: left
+    toc-depth: 3
+
+bibliography: references.bib

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Shoreditch close to achieving 10 microgram/cubic metre target for particulate matter (PM) 2.5</title>
+<title>Particulate matter (PM) 2.5 target of 10 μg/m3 within reach for Shoreditch and surrounding districts</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -109,20 +129,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="floating quarto-light">
 
 <div id="quarto-search-results"></div>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#executive-summary" id="toc-executive-summary" class="nav-link active" data-scroll-target="#executive-summary">Executive summary</a>
+  <ul class="collapse">
+  <li><a href="#recommendation" id="toc-recommendation" class="nav-link" data-scroll-target="#recommendation">Recommendation</a></li>
+  </ul></li>
+  <li><a href="#what-is-pm-2.5" id="toc-what-is-pm-2.5" class="nav-link" data-scroll-target="#what-is-pm-2.5">What is PM 2.5?</a></li>
+  <li><a href="#why-focus-on-pm-2.5" id="toc-why-focus-on-pm-2.5" class="nav-link" data-scroll-target="#why-focus-on-pm-2.5">Why focus on PM 2.5?</a></li>
+  <li><a href="#why-focus-on-tower-hamlets-and-hackney" id="toc-why-focus-on-tower-hamlets-and-hackney" class="nav-link" data-scroll-target="#why-focus-on-tower-hamlets-and-hackney">Why focus on Tower Hamlets and Hackney?</a></li>
+  <li><a href="#sec-analysis" id="toc-sec-analysis" class="nav-link" data-scroll-target="#sec-analysis">Methodology</a>
+  <ul class="collapse">
+  <li><a href="#import-modules" id="toc-import-modules" class="nav-link" data-scroll-target="#import-modules">Import modules</a></li>
+  <li><a href="#read-in-laei-2019-grid-square-shapefile" id="toc-read-in-laei-2019-grid-square-shapefile" class="nav-link" data-scroll-target="#read-in-laei-2019-grid-square-shapefile">Read in LAEI 2019 grid square shapefile</a></li>
+  <li><a href="#read-in-pm-2.5-annual-average-concentrations-data" id="toc-read-in-pm-2.5-annual-average-concentrations-data" class="nav-link" data-scroll-target="#read-in-pm-2.5-annual-average-concentrations-data">Read in PM 2.5 annual average concentrations data</a></li>
+  <li><a href="#perform-spatial-join" id="toc-perform-spatial-join" class="nav-link" data-scroll-target="#perform-spatial-join">Perform spatial join</a></li>
+  <li><a href="#calculate-median-pm-2.5-concentrations-for-each-laei-2019-grid-square" id="toc-calculate-median-pm-2.5-concentrations-for-each-laei-2019-grid-square" class="nav-link" data-scroll-target="#calculate-median-pm-2.5-concentrations-for-each-laei-2019-grid-square">Calculate median PM 2.5 concentrations for each LAEI 2019 grid square</a></li>
+  <li><a href="#categorise-each-grid-square-relative-to-the-who-2021-interim-targets-and-air-quality-guideline-aqg" id="toc-categorise-each-grid-square-relative-to-the-who-2021-interim-targets-and-air-quality-guideline-aqg" class="nav-link" data-scroll-target="#categorise-each-grid-square-relative-to-the-who-2021-interim-targets-and-air-quality-guideline-aqg">Categorise each grid square relative to the WHO 2021 interim targets and air quality guideline (AQG)</a></li>
+  <li><a href="#visualise-the-median-pm-2.5-concentrations-on-an-interactive-choropleth-map" id="toc-visualise-the-median-pm-2.5-concentrations-on-an-interactive-choropleth-map" class="nav-link" data-scroll-target="#visualise-the-median-pm-2.5-concentrations-on-an-interactive-choropleth-map">Visualise the median PM 2.5 concentrations on an interactive choropleth map</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Shoreditch close to achieving 10 microgram/cubic metre target for particulate matter (PM) 2.5</h1>
+<h1 class="title">Particulate matter (PM) 2.5 target of 10 μg/m<sup>3</sup> within reach for Shoreditch and surrounding districts</h1>
 </div>
 
 
@@ -139,108 +187,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>Andrew Sivanesan</strong></p>
-<p><strong>February 2026</strong></p>
+<p><strong>By Andrew Sivanesan</strong></p>
+<div class="figure">
+<p><img src="images/ShoreditchHighStreet.jpg" class="img-fluid"></p>
+<p><span> Bridge over Brick Lane at Shoreditch High Street station, 2010.<br> © Copyright Ben Brooksbank and licensed for reuse under this Creative Commons Licence. </span></p>
+</div>
 <section id="executive-summary" class="level2">
 <h2 class="anchored" data-anchor-id="executive-summary">Executive summary</h2>
-<p>In line with the Mayor’s dual objectives of improving air quality and reducing health inequality across London: efforts to reduce the annual average concentrations of particulate matter (PM) 2.5 should be targeted at Shoreditch and surrounding districts - Whitechapel, Hoxton, Haggerston and Bethnal Green - given their relative deprivation versus the rest of London. Air quality improvement activities may include (as an example) targeted advertising and signage - in partnership with Royal London Hospital (Whitechapel) - of the London Assembly’s recommendations for improving air quality (listed below).</p>
+<p>The London Enviroment Strategy: Fourth Progress Report states that “the Mayor aims for the capital to have the best air quality of any major world city, going beyond the legal requirements to protect human health and minimise inequalities” <span class="citation" data-cites="LondonEnvironmentStrategy4">(<a href="#ref-LondonEnvironmentStrategy4" role="doc-biblioref">Greater London Authority 2024</a>)</span>. With this in mind: efforts to reduce the annual average concentrations of particulate matter (PM) 2.5 should be targeted at <strong>Shoreditch, Whitechapel, Hoxton, Haggerston and Bethnal Green</strong>. See <a href="#fig-choropleth" class="quarto-xref">Figure&nbsp;1</a> for an interactive map. See <a href="#sec-analysis" class="quarto-xref">Section&nbsp;5</a> for step-by-step data analyis.</p>
+<p>Analysis of data from the London Atmospheric Emissions Inventory (LAEI) 2022 shows that these five districts have the <strong>highest annual average concentrations of particulate matter (PM 2.5) in Tower Hamlets and Hackney - two of the most deprived boroughs in London</strong> <span class="citation" data-cites="MinistryHousingCommunitiesLocalGovt">(<a href="#ref-MinistryHousingCommunitiesLocalGovt" role="doc-biblioref">Ministry of Housing, Communities &amp; Local Government 2025</a>)</span>. While these five districts are achieving the World Health Organisation’s (WHO) third interim target of between 10 and 15 μg/m<sup>3</sup> <span class="citation" data-cites="WorldHealthOrganization2">(<a href="#ref-WorldHealthOrganization2" role="doc-biblioref">World Health Organization 2021a</a>)</span>, they are <strong>within 1 μg/m<sup>3</sup> of achieving the fourth interim target of between 5 and 10 μg/m<sup>3</sup>.</strong> For context: the fourth interim target is being achieved by the rest of Tower Hamlets and Hackney. It is also an <strong>important step towards achieving the World Health Organisation’s Air Quality Guideline of less than 5 μg/m<sup>3</sup>, which minimises negative health impacts from PM 2.5.</strong></p>
+<section id="recommendation" class="level3">
+<h3 class="anchored" data-anchor-id="recommendation">Recommendation</h3>
+<p>An example of air quality improvement activity may include a public awareness campaign in the heart of east London reminding local residents of the London Assembly’s recommendations for improving air quality <span class="citation" data-cites="LondonAssembly">(<a href="#ref-LondonAssembly" role="doc-biblioref">London Assembly n.d.</a>)</span>: listed below for ease of reference.</p>
 <ul>
 <li>Walk, cycle and scoot more, and avoid the busiest roads and times when you can</li>
 <li>Use public transport where you can, but if you do have to drive, switch your engine off when you’re stationary.</li>
 </ul>
+<p>It’s recommended that any air quality improvement activities in these districts are done in partnership with community-led initiatives such as Breathe London Communities <span class="citation" data-cites="BreatheLondonCommunities">(<a href="#ref-BreatheLondonCommunities" role="doc-biblioref">Breathe London Communities n.d.</a>)</span> to ensure relevance to, and buy-in from, local residents.</p>
 </section>
-<section id="main-findings" class="level2">
-<h2 class="anchored" data-anchor-id="main-findings">Main findings</h2>
-<p>Based on analysis of data from the London Atmospheric Emissions Inventory (LAEI) 2022 Shoreditch, Whitechapel, Hoxton, Haggerston and Bethnal Green are currently achieving the World Health Organisation’s (WHO) third interim target of between 10 and 15 micrograms per cubic metre (annual average concentration) of particulate matter (PM) 2.5. However, these areas are close to i.e.&nbsp;within 1 microgram per cubic metre of achieving the fourth interim target of between 5 and 10 micrograms per cubic metre (annual average concentration): in line with the rest of Tower Hamlets and Hackney.</p>
-<p>For context: the WHO’s Air Quality Guideline (AQG) for PM 2.5 - which is based on the latest health research -is less than 5 micrograms per cubic metre.</p>
 </section>
 <section id="what-is-pm-2.5" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-pm-2.5">What is PM 2.5?</h2>
-<p>PM 2.5 are fine particles with a diameter of 2.5 micrometres or less: meaning they are small enough to enter the bloodstream and get lodged in major organs such as the heart and brain. Typical sources of PM 2.5 include brake wear and tyre wear from road vehicles. Young children, the elderly and those with respiratory conditions (e.g.&nbsp;asthma) are at most risk of illness from PM 2.5. Therefore, reducing PM 2.5 near schools, hospitals and care homes is a priority.</p>
+<p>PM 2.5 are fine particles with a diameter of 2.5 micrometres or less: meaning they are small enough to enter the bloodstream and get lodged in major organs such as the heart and brain. Typical sources of PM 2.5 include brake wear and tyre wear from road vehicles. Young children, the elderly and those with respiratory conditions (e.g.&nbsp;asthma) are at most risk of illness from PM 2.5 <span class="citation" data-cites="DEFRA">(<a href="#ref-DEFRA" role="doc-biblioref">Department for Environment, Food &amp; Rural Affairs 2025</a>)</span>. Therefore, <strong>reducing PM 2.5 near schools, hospitals and care homes is a priority.</strong></p>
 <p>Concentrations of a variety of pollutants - including PM 2.5 - tend to be higher in built-up inner city areas due to a combination of road traffic congestion (e.g.&nbsp;engine idling, repetitive braking) and lack of open space for pollutants to disperse into the surrounding atmosphere.</p>
 </section>
-<section id="why-pm-2.5" class="level2">
-<h2 class="anchored" data-anchor-id="why-pm-2.5">Why PM 2.5?</h2>
-<p>According to a joint study by EIT Urban Mobility and Transport for London (TfL) and the Greater London Authority (GLA) non-exhaust emissions (NEEs) - particles from brake, tyre and road wear – are now a dominant source of urban particulate matter (PM) in Europe. Furthermore, the Euro 7 emissions standard - which specifies rules for road vehicle emissions limits - comes into effect on 26th Nov 2026. Euro 7 includes limits on emissions from brake wear and tyre wear: key sources of PM 2.5.</p>
+<section id="why-focus-on-pm-2.5" class="level2">
+<h2 class="anchored" data-anchor-id="why-focus-on-pm-2.5">Why focus on PM 2.5?</h2>
+<p>A combination of health-based international guidelines, transport research and European legislation motivate a focus on PM 2.5. According to the World Health Organization, “the burden of disease attributable to air pollution is now estimated to be on a par with other major global health risks such as unhealthy diet and tobacco smoking, and air pollution is now recognized as the single biggest environmental threat to human health” <span class="citation" data-cites="WorldHealthOrganization1">(<a href="#ref-WorldHealthOrganization1" role="doc-biblioref">World Health Organization 2021b</a>)</span>. They set interim targets and air quality guidelines for a variety of pollutants including PM 2.5 <span class="citation" data-cites="WorldHealthOrganization2">(<a href="#ref-WorldHealthOrganization2" role="doc-biblioref">World Health Organization 2021a</a>)</span>. Non-exhaust emissions (NEEs) - particles from brake, tyre and road wear – are now a dominant source of urban particulate matter (PM) in Europe <span class="citation" data-cites="EITUrbanMobility">(<a href="#ref-EITUrbanMobility" role="doc-biblioref">EIT Urban Mobility, in collaboration with Transport for London (TfL) and the Greater London Authority (GLA) and conducted by e:misia n.d.</a>)</span>. Furthermore, the Euro 7 emissions standard - which specifies rules for road vehicle emissions limits - will come into effect in a phased manner from November 2026 onwards. Euro 7 includes limits on emissions from brake wear and tyre wear: key sources of PM 2.5 <span class="citation" data-cites="EuropeanCouncil">(<a href="#ref-EuropeanCouncil" role="doc-biblioref">European Council 2024</a>)</span>.</p>
 </section>
-<section id="why-tower-hamlets-and-hackney" class="level2">
-<h2 class="anchored" data-anchor-id="why-tower-hamlets-and-hackney">Why Tower Hamlets and Hackney?</h2>
-<p>According to the English indices of deprivation 2025 Tower Hamlets and Hackney are the two most deprived boroughs regarding income deprivation among children. Therefore, targeting air quality improvement efforts at these two London boroughs aligns with the Mayor of London’s dual objectives of improving air quality and reducing health inequality across London.</p>
+<section id="why-focus-on-tower-hamlets-and-hackney" class="level2">
+<h2 class="anchored" data-anchor-id="why-focus-on-tower-hamlets-and-hackney">Why focus on Tower Hamlets and Hackney?</h2>
+<p>Tower Hamlets and Hackney are the two most deprived boroughs regarding income deprivation among children <span class="citation" data-cites="MinistryHousingCommunitiesLocalGovt">(<a href="#ref-MinistryHousingCommunitiesLocalGovt" role="doc-biblioref">Ministry of Housing, Communities &amp; Local Government 2025</a>)</span>. Therefore, targeting air quality improvement efforts at these two London boroughs aligns with the Mayor’s aim “for the capital to have the best air quality of any major world city, going beyond the legal requirements to protect human health and minimise inequalities” <span class="citation" data-cites="LondonEnvironmentStrategy4">(<a href="#ref-LondonEnvironmentStrategy4" role="doc-biblioref">Greater London Authority 2024</a>)</span>.</p>
 </section>
-<section id="miscellaneous" class="level2">
-<h2 class="anchored" data-anchor-id="miscellaneous">Miscellaneous</h2>
+<section id="sec-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="sec-analysis">Methodology</h2>
+<p>This analysis uses the following techniques:</p>
 <ul>
-<li>Consider getting involved in Breathe London Communities - including acquiring a sensor to measure air quality in your local area</li>
-<li>Sign up to the Mayor’s Air Quality Alerts</li>
+<li>spatial joins in GeoPandas,</li>
+<li>summary statistics in Pandas, Matplotlib and Seaborn, and</li>
+<li>interative map visualisation in Folium.</li>
 </ul>
-</section>
-<section id="why-this-analysis-matters" class="level2">
-<h2 class="anchored" data-anchor-id="why-this-analysis-matters">Why this analysis matters</h2>
-<ul>
-<li>Euro 7 standard comes into effect on 26th Nov 2026. Increasing focus on particulate matter emissions.</li>
-<li>Negative health effects of PM 2.5 emissions (e.g.&nbsp;brake wear, tyre wear)</li>
-<li>Road transport is the dominant source of emissions</li>
-<li>Non-exhaust emissions are the dominant form of road transport emissions</li>
-</ul>
-</section>
-<section id="background" class="level2">
-<h2 class="anchored" data-anchor-id="background">Background</h2>
-<ul>
-<li>Add details about TfL’s Sustainability plan</li>
-<li>Study on non-exhaust emissions (NEE) in road transport (EIT Urban Mobility) (link <a href="https://www.eiturbanmobility.eu/knowledge-hub/non-exhaust-emission-study/?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=promotion_2205">here</a>)</li>
-<li>Euro 7 emissions standard (link <a href="https://www.consilium.europa.eu/en/press/press-releases/2024/04/12/euro-7-council-adopts-new-rules-on-emission-limits-for-cars-vans-and-trucks/">here</a>)</li>
-<li>World Health Organisation (WHO) global air quality guidelines 2021 (link <a href="https://iris.who.int/server/api/core/bitstreams/b729bbc4-7032-4799-898e-d112faa16f22/content">here</a>)</li>
-<li>Include health impacts of brake wear particles</li>
-</ul>
-</section>
-<section id="sources" class="level2">
-<h2 class="anchored" data-anchor-id="sources">Sources</h2>
-<ul>
-<li>London Atmospheric Emissions Inventory 2022 (link <a href="https://data.london.gov.uk/dataset/london-atmospheric-emissions-inventory-laei-2022-2lg5g/">here</a>)</li>
-<li>WHO global air quality guidelines. Particulate matter (PM2.5 and PM10), ozone, nitrogen dioxide, sulfur dioxide and carbon monoxide. Geneva: World Health Organization; 2021. Licence: CC BY-NC-SA 3.0 IGO.</li>
-<li>London Atmospheric Emissions Inventory 2022 (grid emissions summary). London Datastore (link <a href="https://data.london.gov.uk/dataset/london-atmospheric-emissions-inventory-laei-2022-2lg5g/">here</a>)</li>
-<li>May 2025 Local Authority District (LAD) boundaries (filtered for Kingston Upon Thames). Open Geography Portal - Office for National Statistics. (link <a href="https://geoportal.statistics.gov.uk/datasets/ons::local-authority-districts-may-2025-boundaries-uk-bfc-v2/explore?filters=eyJMQUQyNU5NIjpbIktpbmdzdG9uIHVwb24gVGhhbWVzIl0sIlNoYXBlX19BcmVhIjpbMjg4OTY3OS41Mjg0MzQ3NTM0LDI2MTU4NjY5Nzc0Ljk1MjYzN10sIlNoYXBlX19MZW5ndGgiOls5NDA0LjcxODk3MzQxNTg5Myw1MjM3NTA3LjM1ODU0MDQ2OF19&amp;location=55.340000%2C-3.316939%2C5">here</a>)</li>
-<li>Air quality - Transport for London (link <a href="https://tfl.gov.uk/corporate/about-tfl/air-quality">here</a>))</li>
-<li>Questions to the Mayor about car emissions - 9th Oct 2025 (link <a href="https://www.london.gov.uk/who-we-are/what-london-assembly-does/questions-mayor/find-an-answer/car-emissions#:~:text=Answer&amp;text=Please%20find%20information%20on%20cars,2025%20(the%20latest%20available)">here</a></li>
-<li>Breathe London (link <a href="https://www.breathelondon.org/about">here</a>)</li>
-<li>Daily Air Quality Index (air quality forecasting)(link <a href="https://uk-air.defra.gov.uk/air-pollution/daqi?view=more-info">here</a>)</li>
-<li>Pollution and Air Quality - London Assembly (link <a href="https://www.london.gov.uk/programmes-strategies/environment-and-climate-change/pollution-and-air-quality">here</a>)</li>
-<li>London Environment Strategy: Fourth Progress Report (March 2024) - Greater London Authority (link <a href="https://www.london.gov.uk/sites/default/files/2024-03/LES_4%20Progress%20Report.pdf">here</a>)</li>
-<li>London Atmospheric Emissions Inventory 2022 Update (link <a href="https://data.london.gov.uk/download/2lg5g/2s4/LAEI%202022%20Summary%20Note%20December%202025.pdf">here</a>)</li>
-<li>English Indices of Deprivation 2025: statistical release (link <a href="https://www.gov.uk/government/statistics/english-indices-of-deprivation-2025/english-indices-of-deprivation-2025-statistical-release#:~:text=Two%20London%20boroughs%20(Tower%20Hamlets,use%20the%20indices%20of%20deprivation)">here</a></li>
-<li>Particulate matter (Department for Environment, Food and Rural Affairs) (link <a href="https://www.gov.uk/government/statistics/air-quality-statistics/concentrations-of-particulate-matter-pm10-and-pm25">here</a>)</li>
-<li>London Assembly’s page on air quality (link <a href="https://www.london.gov.uk/programmes-and-strategies/environment-and-climate-change/pollution-and-air-quality/monitoring-and-predicting-air-pollution">here</a>)</li>
-<li>Euro 7: Council adopts new rules on emission limits for cars, vans and trucks (link <a href="https://www.consilium.europa.eu/en/press/press-releases/2024/04/12/euro-7-council-adopts-new-rules-on-emission-limits-for-cars-vans-and-trucks/">here</a>)</li>
-</ul>
-</section>
-<section id="credits" class="level2">
-<h2 class="anchored" data-anchor-id="credits">Credits</h2>
-<ul>
-<li>Python Graph Gallery (link <a href="python-graph-gallery.com">here</a>)</li>
-<li>Stack Overflow</li>
-</ul>
-</section>
-<section id="use-of-generative-ai" class="level2">
-<h2 class="anchored" data-anchor-id="use-of-generative-ai">Use of generative AI</h2>
-<p>Google Gemini was used to answer questions about Python coding syntax and geospatial data visualisation as well as contextual questions about London air quality. I confirmed accuracy of responses by viewing the source web pages.</p>
-</section>
-<section id="technical-notes" class="level2">
-<h2 class="anchored" data-anchor-id="technical-notes">Technical notes</h2>
-<p>This analysis was conducted on a personal laptop with 4 GB of installed RAM and an Intel(R) N150 800 MHz processor. The laptop’s specification was intended for everyday web browsing and low-intensity office tasks (e.g.&nbsp;word processing, spreadsheets), not for processing high-resolution geospatial data for the whole of London. Anyone wishing to expand this analysis to cover the whole of London is advised to use hardware designed for processing large volumes of data (e.g.&nbsp;a high-specification laptop, a virtual machine) to maximise speed of code execution.</p>
-</section>
-<section id="fixme-20260225" class="level2">
-<h2 class="anchored" data-anchor-id="fixme-20260225">FixMe (20260225)</h2>
-<ul>
-<li>Adapt legend to focus on interim target values</li>
-<li>Check how the LAEI grid squares work: particularly at boundaries between boroughs. Are they always squares? Is there one square per ID? Do they overlap? Are they contiguous?</li>
-<li>Check if spatial join is introducing duplicate LAEI grid IDs.</li>
-<li>Remind myself how to do Harvard citation.</li>
-<li>Find out how to include footnotes in Markdown</li>
-</ul>
-</section>
-<section id="import-modules" class="level2">
-<h2 class="anchored" data-anchor-id="import-modules">Import modules</h2>
-<div id="6f9fb847-3779-4c2c-af14-7b311aa292e2" class="cell" data-execution_count="62">
+<section id="import-modules" class="level3">
+<h3 class="anchored" data-anchor-id="import-modules">Import modules</h3>
+<div id="6f9fb847-3779-4c2c-af14-7b311aa292e2" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> folium</span>
@@ -248,26 +237,108 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="read-in-laei-2019-grid-square-shapefile" class="level2">
-<h2 class="anchored" data-anchor-id="read-in-laei-2019-grid-square-shapefile">Read in LAEI 2019 grid square shapefile</h2>
-<p>1 km x 1 km squares</p>
-<p>The area covered by the LAEI includes Greater London (the 32 London boroughs and the City of London), as well as areas outside Greater London up to the M25 motorway.</p>
-<div id="6c673cad-e44b-4984-8dd0-fc453285f7fd" class="cell" data-execution_count="63">
+<section id="read-in-laei-2019-grid-square-shapefile" class="level3">
+<h3 class="anchored" data-anchor-id="read-in-laei-2019-grid-square-shapefile">Read in LAEI 2019 grid square shapefile</h3>
+<p>These are 1 km x 1 km squares defined using the <strong>British National Grid (BNG) coordinate reference system.</strong> Coordinates are expressed as eastings and northings. The 1km2_IDs - which are unique to each grid square - increase from west and east and north to south.</p>
+<p>The area covered by the London Atmospheric Emissions Inventory (LAEI) includes <strong>Greater London (the 32 London boroughs and the City of London) as well as areas outside Greater London up to the M25 motorway.</strong> <span class="citation" data-cites="LAEI">(<a href="#ref-LAEI" role="doc-biblioref">Greater London Authority 2022</a>)</span></p>
+<div id="6c673cad-e44b-4984-8dd0-fc453285f7fd" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fname_grid <span class="op">=</span> <span class="st">"LAEI2019_grid.shp"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="675a760e-7f96-4b73-88ac-edcc853c1352" class="cell" data-execution_count="64">
+<div id="675a760e-7f96-4b73-88ac-edcc853c1352" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>grid <span class="op">=</span> gpd.read_file(fname_grid)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>grid <span class="op">=</span> grid[grid[<span class="st">"Borough"</span>].isin([<span class="st">"Tower Hamlets"</span>, <span class="st">"Hackney"</span>])]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>grid <span class="op">=</span> grid[grid[<span class="st">"Borough"</span>].isin([<span class="st">"Tower Hamlets"</span>, <span class="st">"Hackney"</span>])]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>grid.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Grid_ID_19</th>
+<th data-quarto-table-cell-role="th">GridIdEx</th>
+<th data-quarto-table-cell-role="th">1km2_ID</th>
+<th data-quarto-table-cell-role="th">Easting</th>
+<th data-quarto-table-cell-role="th">Northing</th>
+<th data-quarto-table-cell-role="th">Area_km2</th>
+<th data-quarto-table-cell-role="th">Borough</th>
+<th data-quarto-table-cell-role="th">Zone</th>
+<th data-quarto-table-cell-role="th">geometry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2764</th>
+<td>2765</td>
+<td>692</td>
+<td>8513</td>
+<td>533500</td>
+<td>188500</td>
+<td>0.06</td>
+<td>Hackney</td>
+<td>InnerULEX</td>
+<td>MULTIPOLYGON (((534000.003 188000.005, 533419....</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2779</th>
+<td>2780</td>
+<td>732</td>
+<td>8855</td>
+<td>531500</td>
+<td>186500</td>
+<td>0.21</td>
+<td>Hackney</td>
+<td>InnerULEX</td>
+<td>POLYGON ((531999.998 186401.602, 531901.503 18...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2782</th>
+<td>2783</td>
+<td>735</td>
+<td>8857</td>
+<td>533500</td>
+<td>186500</td>
+<td>1.00</td>
+<td>Hackney</td>
+<td>InnerULEX</td>
+<td>POLYGON ((534000.003 185999.997, 533000.001 18...</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2783</th>
+<td>2784</td>
+<td>736</td>
+<td>8859</td>
+<td>535500</td>
+<td>186500</td>
+<td>0.77</td>
+<td>Hackney</td>
+<td>InnerULEX</td>
+<td>POLYGON ((535999.999 186554.499, 535999.999 18...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2786</th>
+<td>2787</td>
+<td>739</td>
+<td>8861</td>
+<td>537500</td>
+<td>186500</td>
+<td>0.04</td>
+<td>Hackney</td>
+<td>InnerULEX</td>
+<td>POLYGON ((537306.404 185999.997, 537000.001 18...</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
 </div>
 </section>
-<section id="read-in-pm-2.5-concentrations-data" class="level2">
-<h2 class="anchored" data-anchor-id="read-in-pm-2.5-concentrations-data">Read in PM 2.5 concentrations data</h2>
-<ul>
-<li>High data resolution: 20 metre x 20 metre squares</li>
-<li>Circa 6 million rows of data</li>
-<li>Original dataset was split into chunks due to 100 MB file size limit on GitHub</li>
-</ul>
-<div id="28fbcb6e-fd03-496b-b701-9eab17c2af0d" class="cell" data-execution_count="65">
+<section id="read-in-pm-2.5-annual-average-concentrations-data" class="level3">
+<h3 class="anchored" data-anchor-id="read-in-pm-2.5-annual-average-concentrations-data">Read in PM 2.5 annual average concentrations data</h3>
+<p>This data is high data resolution: one data point per 20 metre x 20 metre square. There are around 6 million rows of data in the original dataset (which covers the whole of London), which exceeds the 100 MB file size limit in GitHub. Therefore, the data was split into smaller chunks that could be uploaded to GitHub.</p>
+<div id="28fbcb6e-fd03-496b-b701-9eab17c2af0d" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>chunks <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">12</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define an easting and northing box for Tower Hamlets and Hackney</span></span>
@@ -289,22 +360,244 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co"># define filter condition for the easting and northing box</span></span>
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>cond <span class="op">=</span> (df[<span class="st">"Easting"</span>].between(min_easting, max_easting)) <span class="op">&amp;</span> (df[<span class="st">"Northing"</span>].between(min_northing, max_northing))</span>
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[cond]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[cond]</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Easting</th>
+<th data-quarto-table-cell-role="th">Northing</th>
+<th data-quarto-table-cell-role="th">conc</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">195398</th>
+<td>530000</td>
+<td>188000</td>
+<td>9.581474</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">195399</th>
+<td>530020</td>
+<td>188000</td>
+<td>9.411696</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">195400</th>
+<td>530040</td>
+<td>188000</td>
+<td>9.351303</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">195401</th>
+<td>530060</td>
+<td>188000</td>
+<td>9.332762</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">195402</th>
+<td>530080</td>
+<td>188000</td>
+<td>9.329437</td>
+</tr>
+</tbody>
+</table>
+
 </div>
-<div id="449209f3-56f0-4b80-a903-23b9c49e7bd1" class="cell" data-execution_count="66">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>gdf <span class="op">=</span> gpd.GeoDataFrame(df,</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                       geometry<span class="op">=</span>gpd.points_from_xy(df[<span class="st">"Easting"</span>], df[<span class="st">"Northing"</span>]),</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                       crs<span class="op">=</span><span class="st">"EPSG:27700"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="f15ffd78-704e-41c9-af4d-c97253d5292e" class="cell" data-execution_count="67">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>grid_contains_points <span class="op">=</span> grid.sjoin(gdf, how<span class="op">=</span><span class="st">"inner"</span>, predicate<span class="op">=</span><span class="st">"contains"</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#grid_contains_points.head()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="calculate-median-pm-2.5-concentrations-for-each-laei-2019-grid-square" class="level2">
-<h2 class="anchored" data-anchor-id="calculate-median-pm-2.5-concentrations-for-each-laei-2019-grid-square">Calculate median PM 2.5 concentrations for each LAEI 2019 grid square</h2>
-<p>The median (middle) value provides a representative PM 2.5 concentration for each grid square that isn’t skewed by the distribution of concentrations (including outliers).</p>
+<section id="perform-spatial-join" class="level3">
+<h3 class="anchored" data-anchor-id="perform-spatial-join">Perform spatial join</h3>
+<p>Convert from Pandas DataFrame to GeoPandas DataFrame. This creates a Point object for each data point, which will be used in a spatial join between the LAEI 2019 grid squares and the PM 2.5 concentrations data. As mentioned previously: the coordinate reference system is British National Grid (EPSG:27700). The spatial join will map each PM 2.5 concentration data point to a LAEI 2019 grid square (and, by extension, a London borough).</p>
+<div id="449209f3-56f0-4b80-a903-23b9c49e7bd1" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>gdf <span class="op">=</span> gpd.GeoDataFrame(df,</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                       geometry<span class="op">=</span>gpd.points_from_xy(df[<span class="st">"Easting"</span>], df[<span class="st">"Northing"</span>]),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                       crs<span class="op">=</span><span class="st">"EPSG:27700"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>gdf.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Easting</th>
+<th data-quarto-table-cell-role="th">Northing</th>
+<th data-quarto-table-cell-role="th">conc</th>
+<th data-quarto-table-cell-role="th">geometry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">195398</th>
+<td>530000</td>
+<td>188000</td>
+<td>9.581474</td>
+<td>POINT (530000 188000)</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">195399</th>
+<td>530020</td>
+<td>188000</td>
+<td>9.411696</td>
+<td>POINT (530020 188000)</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">195400</th>
+<td>530040</td>
+<td>188000</td>
+<td>9.351303</td>
+<td>POINT (530040 188000)</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">195401</th>
+<td>530060</td>
+<td>188000</td>
+<td>9.332762</td>
+<td>POINT (530060 188000)</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">195402</th>
+<td>530080</td>
+<td>188000</td>
+<td>9.329437</td>
+<td>POINT (530080 188000)</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="f15ffd78-704e-41c9-af4d-c97253d5292e" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>grid_contains_points <span class="op">=</span> grid.sjoin(gdf, how<span class="op">=</span><span class="st">"inner"</span>, predicate<span class="op">=</span><span class="st">"contains"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>grid_contains_points.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Grid_ID_19</th>
+<th data-quarto-table-cell-role="th">GridIdEx</th>
+<th data-quarto-table-cell-role="th">1km2_ID</th>
+<th data-quarto-table-cell-role="th">Easting_left</th>
+<th data-quarto-table-cell-role="th">Northing_left</th>
+<th data-quarto-table-cell-role="th">Area_km2</th>
+<th data-quarto-table-cell-role="th">Borough</th>
+<th data-quarto-table-cell-role="th">Zone</th>
+<th data-quarto-table-cell-role="th">geometry</th>
+<th data-quarto-table-cell-role="th">index_right</th>
+<th data-quarto-table-cell-role="th">Easting_right</th>
+<th data-quarto-table-cell-role="th">Northing_right</th>
+<th data-quarto-table-cell-role="th">conc</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2779</th>
+<td>2780</td>
+<td>732</td>
+<td>8855</td>
+<td>531500</td>
+<td>186500</td>
+<td>0.21</td>
+<td>Hackney</td>
+<td>InnerULEX</td>
+<td>POLYGON ((531999.998 186401.602, 531901.503 18...</td>
+<td>433840</td>
+<td>531900</td>
+<td>186380</td>
+<td>11.285640</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2779</th>
+<td>2780</td>
+<td>732</td>
+<td>8855</td>
+<td>531500</td>
+<td>186500</td>
+<td>0.21</td>
+<td>Hackney</td>
+<td>InnerULEX</td>
+<td>POLYGON ((531999.998 186401.602, 531901.503 18...</td>
+<td>433841</td>
+<td>531920</td>
+<td>186380</td>
+<td>10.262810</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2779</th>
+<td>2780</td>
+<td>732</td>
+<td>8855</td>
+<td>531500</td>
+<td>186500</td>
+<td>0.21</td>
+<td>Hackney</td>
+<td>InnerULEX</td>
+<td>POLYGON ((531999.998 186401.602, 531901.503 18...</td>
+<td>430853</td>
+<td>531880</td>
+<td>186400</td>
+<td>11.863350</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2779</th>
+<td>2780</td>
+<td>732</td>
+<td>8855</td>
+<td>531500</td>
+<td>186500</td>
+<td>0.21</td>
+<td>Hackney</td>
+<td>InnerULEX</td>
+<td>POLYGON ((531999.998 186401.602, 531901.503 18...</td>
+<td>430855</td>
+<td>531920</td>
+<td>186400</td>
+<td>9.997118</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2779</th>
+<td>2780</td>
+<td>732</td>
+<td>8855</td>
+<td>531500</td>
+<td>186500</td>
+<td>0.21</td>
+<td>Hackney</td>
+<td>InnerULEX</td>
+<td>POLYGON ((531999.998 186401.602, 531901.503 18...</td>
+<td>430854</td>
+<td>531900</td>
+<td>186400</td>
+<td>10.211490</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="calculate-median-pm-2.5-concentrations-for-each-laei-2019-grid-square" class="level3">
+<h3 class="anchored" data-anchor-id="calculate-median-pm-2.5-concentrations-for-each-laei-2019-grid-square">Calculate median PM 2.5 concentrations for each LAEI 2019 grid square</h3>
+<p>In order to produce a summary visualisation for each LAEI 2019 grid square we need to summarise the PM 2.5 concentrations for each LAEI 2019 grid square. The median (middle) value provides a representative PM 2.5 concentration for each LAEI 2019 grid square that isn’t skewed by the distribution of concentrations (including outliers).</p>
+<p>A box plot of the median PM 2.5 concentrations is used to sense-check the distribution of median PM 2.5 concentrations.</p>
 <div id="86e0dc6c-d8e3-4bab-86c0-c1eb097429cd" class="cell" data-execution_count="68">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This cell is split into two lines of code purely for the benefit of readability</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>median_conc_per_grid_square <span class="op">=</span> gpd.GeoDataFrame(grid_contains_points.groupby([<span class="st">"1km2_ID"</span>, <span class="st">"geometry"</span>, <span class="st">"Borough"</span>])[<span class="st">"conc"</span>].median().reset_index())</span>
@@ -326,8 +619,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="categorise-each-grid-square-relative-to-the-who-2021-interim-targets-and-air-quality-guideline-aqg" class="level2">
-<h2 class="anchored" data-anchor-id="categorise-each-grid-square-relative-to-the-who-2021-interim-targets-and-air-quality-guideline-aqg">Categorise each grid square relative to the WHO 2021 interim targets and air quality guideline (AQG)</h2>
+<section id="categorise-each-grid-square-relative-to-the-who-2021-interim-targets-and-air-quality-guideline-aqg" class="level3">
+<h3 class="anchored" data-anchor-id="categorise-each-grid-square-relative-to-the-who-2021-interim-targets-and-air-quality-guideline-aqg">Categorise each grid square relative to the WHO 2021 interim targets and air quality guideline (AQG)</h3>
+<p>The PM 2.5 concentrations for each LAEI 2019 grid square are compared against the interim targets and air quality guideline from the World Health Organizaton.</p>
+<p>The WHO_guideline_categoriser function will be used to produce values in the tooltip in the interactive choropleth map at the end of this notebook.</p>
+<p>The WHO_target_value function will be used to colour the LAEI 2019 grid squares in the interative choropleth map at the end of this notebook.</p>
+<p>A summary count is performed to gauge how many grid squares are mapped to each interim target or air quality guideline.</p>
 <div id="8b91b353-dfdd-400b-a181-0615fd567f52" class="cell" data-execution_count="71">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> WHO_guideline_categoriser(conc):</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
@@ -394,9 +691,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div id="4fd03b16-c55c-411f-85d5-7f0685f43059" class="cell" data-execution_count="73">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>median_conc_per_grid_square[<span class="st">"Target"</span>] <span class="op">=</span> median_conc_per_grid_square.<span class="bu">apply</span>(<span class="kw">lambda</span> x: WHO_guideline_categoriser(x[<span class="st">"Median_PM2.5_concentration"</span>]), axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>median_conc_per_grid_square[<span class="st">"TargetValue"</span>] <span class="op">=</span> median_conc_per_grid_square.<span class="bu">apply</span>(<span class="kw">lambda</span> x: WHO_target_value(x[<span class="st">"Median_PM2.5_concentration"</span>]), axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#median_conc_per_grid_square.head()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>median_conc_per_grid_square[<span class="st">"TargetValue"</span>] <span class="op">=</span> median_conc_per_grid_square.<span class="bu">apply</span>(<span class="kw">lambda</span> x: WHO_target_value(x[<span class="st">"Median_PM2.5_concentration"</span>]), axis<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="b3802327-a5f9-41dd-876b-e26743169a44" class="cell" data-execution_count="74">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 53 out of 73 grid squares in Tower Hamlets and Hackney meet interim target 4 (10 micrograms per cubic metre)</span></span>
@@ -497,13 +792,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="visualise-the-median-pm-2.5-concentrations-on-an-interactive-choropleth-map" class="level2">
-<h2 class="anchored" data-anchor-id="visualise-the-median-pm-2.5-concentrations-on-an-interactive-choropleth-map">Visualise the median PM 2.5 concentrations on an interactive choropleth map</h2>
-<ul>
-<li>Note: some grid squares contain more than one polygon. The colour of the grid square is based on the polygon with the highest median concentration of PM 2.5 within the square (even if that polygon constitutes a very small portion of the square). Examples include LAEI grid IDs 8173 (Waltham Forest), 8693 (Redbrige) and 9362 (Hammersmith &amp; Fulham).</li>
-<li>Outer London boroughs and non-GLA areas are closest to achieving the air quality guideline (5 micrograms/cubic metre). However, they are typically the most affluent parts of London. It would be more socially equitable to target air quality improvement activities at more deprived London boroughs (e.g.&nbsp;Tower Hamlets, Newham).</li>
-</ul>
-<div id="cell-choropleth" class="cell" data-execution_count="95">
+<section id="visualise-the-median-pm-2.5-concentrations-on-an-interactive-choropleth-map" class="level3">
+<h3 class="anchored" data-anchor-id="visualise-the-median-pm-2.5-concentrations-on-an-interactive-choropleth-map">Visualise the median PM 2.5 concentrations on an interactive choropleth map</h3>
+<p>The choropleth map reveals a hotspot (blue squares) in the south-west of Hackney and north-west of Tower Hamlets. This includes the five districts of <strong>Shoreditch, Whitechapel, Hoxton, Haggerston and Bethnal Green.</strong> They are <strong>achieving interim target 3 (10 to 15 μg/m<sup>3</sup>)</strong> whereas the rest of Tower Hamlets and Hackney are achieving interim target 4 (5 to 10 μg/m<sup>3</sup>) (yellow squares). Hover your cursor over each square to get additional information via the tooltip.</p>
+<p>Please note that some grid squares (e.g.&nbsp;at the boundary between Tower Hamlets and Hackney) contain more than one polygon. <strong>The colour of the LAEI 2019 grid square is based on the polygon with the highest median annual average concentration of PM 2.5 within the square (even if that polygon constitutes a very small portion of the square)</strong>. Examples include LAEI grid IDs 9373 and 9374 (Tower Hamlets/Hackney).</p>
+<div id="cell-fig-choropleth" class="cell" data-execution_count="95">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>london_centre <span class="op">=</span> [<span class="fl">51.51</span>, <span class="op">-</span><span class="fl">0.12</span>]</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># these two functions will be used in the tooltip</span></span>
@@ -543,7 +836,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>m.add_child(tooltip)</span>
 <span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>m</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="choropleth" class="cell-output cell-output-display" data-execution_count="95">
+<div id="fig-choropleth" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="95">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-choropleth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -&gt; Trust Notebook</span><iframe srcdoc="<!DOCTYPE html>
 <html>
 <head>
@@ -859,14 +1154,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         
 </script>
 </html>" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe></div></div>
-<p>Blue cells indicate higher PM 2.5 concentrations.</p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-choropleth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Blue cells indicate higher PM 2.5 concentrations.
+</figcaption>
+</figure>
 </div>
 </div>
+</section>
+</section>
+<section id="references" class="level2">
+
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-BreatheLondonCommunities" class="csl-entry" role="listitem">
+Breathe London Communities. n.d. <span>“About the Breathe London Communities Network.”</span> Accessed February 23, 2026. <a href="https://www.breathelondon-communities.org/about">https://www.breathelondon-communities.org/about</a>.
+</div>
+<div id="ref-DEFRA" class="csl-entry" role="listitem">
+Department for Environment, Food &amp; Rural Affairs. 2025. <span>“Particulate Matter (PM10/PM2.5).”</span> 2025. <a href="https://www.gov.uk/government/statistics/air-quality-statistics/concentrations-of-particulate-matter-pm10-and-pm25">https://www.gov.uk/government/statistics/air-quality-statistics/concentrations-of-particulate-matter-pm10-and-pm25</a>.
+</div>
+<div id="ref-EITUrbanMobility" class="csl-entry" role="listitem">
+EIT Urban Mobility, in collaboration with Transport for London (TfL) and the Greater London Authority (GLA) and conducted by e:misia. n.d. <span>“Study on Non-Exhaust Emissions (NEE) in Road Transport.”</span> Accessed February 23, 2026. <a href="https://www.eiturbanmobility.eu/knowledge-hub/non-exhaust-emission-study/?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=promotion_2205">https://www.eiturbanmobility.eu/knowledge-hub/non-exhaust-emission-study/?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=promotion_2205</a>.
+</div>
+<div id="ref-EuropeanCouncil" class="csl-entry" role="listitem">
+European Council. 2024. <span>“Euro 7: Council Adopts New Rules on Emission Limits for Cars, Vans and Trucks.”</span> 2024. <a href="https://www.consilium.europa.eu/en/press/press-releases/2024/04/12/euro-7-council-adopts-new-rules-on-emission-limits-for-cars-vans-and-trucks/">https://www.consilium.europa.eu/en/press/press-releases/2024/04/12/euro-7-council-adopts-new-rules-on-emission-limits-for-cars-vans-and-trucks/</a>.
+</div>
+<div id="ref-LAEI" class="csl-entry" role="listitem">
+Greater London Authority. 2022. <span>“London Atmospheric Emissions Inventory LAEI 2022.”</span> 2022. <a href="https://data.london.gov.uk/dataset/london-atmospheric-emissions-inventory-laei-2022-2lg5g/">https://data.london.gov.uk/dataset/london-atmospheric-emissions-inventory-laei-2022-2lg5g/</a>.
+</div>
+<div id="ref-LondonEnvironmentStrategy4" class="csl-entry" role="listitem">
+———. 2024. <span>“London Environment Strategy: Fourth Progress Report (2018-2024).”</span> 2024. <a href="https://www.london.gov.uk/sites/default/files/2024-03/LES_4%20Progress%20Report.pdf">https://www.london.gov.uk/sites/default/files/2024-03/LES_4%20Progress%20Report.pdf</a>.
+</div>
+<div id="ref-LondonAssembly" class="csl-entry" role="listitem">
+London Assembly. n.d. <span>“Monitoring and Predicting Air Pollution.”</span> Accessed February 23, 2026. <a href="https://www.london.gov.uk/programmes-and-strategies/environment-and-climate-change/pollution-and-air-quality/monitoring-and-predicting-air-pollution">https://www.london.gov.uk/programmes-and-strategies/environment-and-climate-change/pollution-and-air-quality/monitoring-and-predicting-air-pollution</a>.
+</div>
+<div id="ref-MinistryHousingCommunitiesLocalGovt" class="csl-entry" role="listitem">
+Ministry of Housing, Communities &amp; Local Government. 2025. <span>“English Indices of Deprivation 2025: Statistical Release.”</span> 2025. <a href="https://www.gov.uk/government/statistics/english-indices-of-deprivation-2025/english-indices-of-deprivation-2025-statistical-release">https://www.gov.uk/government/statistics/english-indices-of-deprivation-2025/english-indices-of-deprivation-2025-statistical-release</a>.
+</div>
+<div id="ref-WorldHealthOrganization1" class="csl-entry" role="listitem">
+World Health Organization. 2021b. <span>“WHO Global Air Quality Guidelines. Particulate Matter (PM2.5 and PM10), Ozone, Nitrogen Dioxide, Sulfur Dioxide and Carbon Monoxide. Licence: CC BY-NC-SA 3.0 IGO.”</span> xiv. <a href="https://iris.who.int/server/api/core/bitstreams/551b515e-2a32-4e1a-a58c-cdaecd395b19/content">https://iris.who.int/server/api/core/bitstreams/551b515e-2a32-4e1a-a58c-cdaecd395b19/content</a>.
+</div>
+<div id="ref-WorldHealthOrganization2" class="csl-entry" role="listitem">
+———. 2021a. <span>“WHO Global Air Quality Guidelines. Particulate Matter (PM2.5 and PM10), Ozone, Nitrogen Dioxide, Sulfur Dioxide and Carbon Monoxide. Licence: CC BY-NC-SA 3.0 IGO.”</span> xvii. <a href="https://iris.who.int/server/api/core/bitstreams/551b515e-2a32-4e1a-a58c-cdaecd395b19/content">https://iris.who.int/server/api/core/bitstreams/551b515e-2a32-4e1a-a58c-cdaecd395b19/content</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
