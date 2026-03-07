@@ -9,4 +9,11 @@ project:
 website:
   title: ""
 
+format:
+  html:
+    toc: true
+    toc-title: Contents
+    toc-location: left
+    toc-depth: 3
+
 bibliography: references.bib
