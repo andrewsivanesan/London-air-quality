@@ -238,7 +238,7 @@ div.csl-indent {
 <section id="why-focus-on-tower-hamlets-and-hackney" class="level3">
 <h3 class="anchored" data-anchor-id="why-focus-on-tower-hamlets-and-hackney">Why focus on Tower Hamlets and Hackney?</h3>
 <div class="figure">
-<p><img src="images/Hackney_Empire.jpg" class="img-fluid"></p>
+<p><img src="images/Hackney_Empire.JPG" class="img-fluid"></p>
 <p><span> Hackney Empire: an example of the cultural richness of east London <br> Credit: cjc13 <br> Source: Wikimedia Commons </span></p>
 </div>
 <p>Tower Hamlets and Hackney are iconic boroughs of east London: rich in culture and heritage as well as a growing hub for the technology industry. However, against this backdrop of cultural and intellectual capital Tower Hamlets and Hackney are also the two most deprived boroughs regarding income deprivation among children <span class="citation" data-cites="MinistryHousingCommunitiesLocalGovt">(<a href="#ref-MinistryHousingCommunitiesLocalGovt" role="doc-biblioref">Ministry of Housing, Communities &amp; Local Government 2025</a>)</span>. Therefore, targeting air quality improvement efforts at these two London boroughs aligns with the Mayor’s aim “for the capital to have the best air quality of any major world city, going beyond the legal requirements to protect human health and minimise inequalities” <span class="citation" data-cites="LondonEnvironmentStrategy4">(<a href="#ref-LondonEnvironmentStrategy4" role="doc-biblioref">Greater London Authority 2024</a>)</span>.</p>
@@ -848,7 +848,8 @@ div.csl-indent {
 <p>Finally, we visualise the median PM 2.5 concentrations on a choropleth map. This provides an interactive and intuitive way for non-technical readers to engage with the data.</p>
 <p>The choropleth map reveals a hotspot (blue squares) in the south-west of Hackney and north-west of Tower Hamlets. Visual inspection reveals that this hotspot spans the five districts of <strong>Shoreditch, Whitechapel, Hoxton, Haggerston and Bethnal Green.</strong> They are <strong>achieving interim target 3 (10 to 15 μg/m<sup>3</sup>)</strong> whereas the rest of Tower Hamlets and Hackney are achieving interim target 4 (5 to 10 μg/m<sup>3</sup>) (yellow squares). Hover your cursor over each square to get additional information via the tooltip.</p>
 <p>As mentioned previously: please note that some grid squares (e.g.&nbsp;at the boundary between Tower Hamlets and Hackney) contain more than one polygon.</p>
-<p><strong>How this visualisation handles grid squares containing multiple polygons</strong></p>
+<section id="how-this-visualisation-handles-grid-squares-containing-multiple-polygons" class="level4">
+<h4 class="anchored" data-anchor-id="how-this-visualisation-handles-grid-squares-containing-multiple-polygons">How this visualisation handles grid squares containing multiple polygons</h4>
 <p>Where an LAEI 2019 grid square contains multiple polygons the colour of the grid square is based on the <strong>polygon with the highest median annual average concentration</strong> of PM 2.5. This is true <strong>even if the polygon constitutes a very small portion of the grid square</strong>. An example is the south-east corner of 1km2_ID 9373 (between Haggerston and Hoxton on the Tower Hamlets/Hackney border). Therefore, <strong>in the case of grid squares containing multiple polgyons: the map visualises the “worst-case” median annual average PM 2.5 concentration.</strong></p>
 <div id="cell-fig-choropleth" class="cell" data-execution_count="95">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>london_centre <span class="op">=</span> [<span class="fl">51.51</span>, <span class="op">-</span><span class="fl">0.12</span>]</span>
@@ -1215,6 +1216,7 @@ Figure&nbsp;1: Blue cells indicate higher PM 2.5 concentrations.
 </figure>
 </div>
 </div>
+</section>
 </section>
 </section>
 <section id="conclusion" class="level2">
