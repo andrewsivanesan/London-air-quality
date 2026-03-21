@@ -1,5 +1,7 @@
 # London-air-quality
 
+This project is for portfolio and demonstration purposes only. Reuse or redistribution of the code is not permitted.
+
 ## Data sources
 
 The primary data source was the London Atmospheric Emissions Inventory 2022 (link [here](https://data.london.gov.uk/dataset/london-atmospheric-emissions-inventory-laei-2022-2lg5g/)), which is available to the public via the London Datastore.
